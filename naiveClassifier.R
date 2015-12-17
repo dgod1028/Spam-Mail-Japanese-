@@ -42,7 +42,7 @@ classify <- function(mail){
   class = c()
   scores=c()
   for(n in 1:length(mail)){
-    for(i in 1:3){
+    for(i in 1:2){
       scores[i] = score(mail[n],i)
     }
     
