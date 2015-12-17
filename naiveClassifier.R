@@ -29,7 +29,7 @@ score <- function(mail,cate){
       }
     }
     if(zero == TRUE){
-      score = score *(1/(sum(voc[,3])*10))
+      score = score *(1/(sum(voc[,2])*10))
     }
   }
   return(score)
@@ -52,5 +52,3 @@ classify <- function(mail){
 }
 
 
-spam.d = gsub("\na","",spam.d)
-nonspam.d = gsub("\na","",nonspam.d)
