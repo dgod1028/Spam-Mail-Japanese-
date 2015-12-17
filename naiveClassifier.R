@@ -51,5 +51,3 @@ classify <- function(mail){
   return(C)
 }
 
-spam.d <- gsub("\na","",spam.d)
-nonspam.d <- gsub("\na","",nonspam.d)
