@@ -13,7 +13,7 @@ Voc = function(x){
 
 
 score <- function(mail,cate){
-  mail <- unlist(lapply(mail, function(x) { str_split(x, " ") }))
+  mail <- unlist(RMeCabC(mail))
   mail <- subset(mail,mail != "")
   score = prior[cate]
   if(cate == 1){voc = spam.words}
