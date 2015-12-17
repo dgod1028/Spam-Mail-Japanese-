@@ -23,13 +23,13 @@ score <- function(mail,cate){
     zero = TRUE
     for(i in 1:nrow(voc)){
       if(as.character(voc[i,1]) == mail[w]){
-        score = score * voc[i,4]
+        score = score * voc[i,3]
         zero = FALSE
         break
       }
     }
     if(zero == TRUE){
-      score = score *(1/sum(voc[,2])*10)
+      score = score *(1/sum(voc[,3])*10)
     }
   }
   return(score)
@@ -52,3 +52,5 @@ classify <- function(mail){
 }
 
 
+spam.d = gsub("\na","",spam.d)
+nonspam.d = gsub("\na","",nonspam.d)
