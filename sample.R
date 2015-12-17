@@ -82,5 +82,3 @@ nonspam.d[[2]] = "お疲れ様です。
 
 spam.list<- getURL("https://raw.githubusercontent.com/dgod1028/Spam-Mail-Japanese-/master/sample.R")
 
-spam.d = gsub("\n","",spam.d)
-nonspam.d = gsub("\n","",nonspam.d)
