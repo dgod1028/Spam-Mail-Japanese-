@@ -1,4 +1,16 @@
 
+Voc = function(x){
+	word = list()
+	for(i in 1:length(x)){
+		word[[i]] = RMeCabC(x[[i]])
+	}
+	word.t = table(unlist(word))
+	voc= data.frame(name = names(word.t),
+	frequancy = as.vector(word.t),
+	density = as.vector(word.t)/sum(word.t)) 
+	return(voc)
+}
+
 
 score <- function(mail,cate){
   mail <- unlist(lapply(mail, function(x) { str_split(x, " ") }))
