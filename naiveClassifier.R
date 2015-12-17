@@ -29,7 +29,7 @@ score <- function(mail,cate){
       }
     }
     if(zero == TRUE){
-      score = score *(1/sum(voc[,3])*10)
+      score = score *(1/(sum(voc[,3])*10))
     }
   }
   return(score)
