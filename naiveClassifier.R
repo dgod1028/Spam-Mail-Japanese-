@@ -30,7 +30,7 @@ score <- function(mail,cate){
       }
     }
     if(zero == TRUE){
-      score = score *(1/length(training[[cate]])*10)
+      score = score *(1/sum(voc[,2])*10)
     }
   }
   return(score)
