@@ -46,6 +46,7 @@ classify <- function(mail){
     }
     
     C = which(scores==max(scores))
+    print(c("p(Spam)","p(non-Spam)"))
     print(scores)
   }
   return(C)
