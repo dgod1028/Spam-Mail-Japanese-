@@ -50,9 +50,18 @@ classify <- function(mail){
     }
     
     C = which(scores==max(scores))
+    if(C == 1){
+    Mes = "スパムメール"
+    }
+    if(C == 2){
+    Mes = "一般メール"
+    }
+    if(C == 0){
+    Mes = "エラー"
+    }
     print(c("p(Spam)","p(non-Spam)"))
     print(scores)
   }
-  return(C)
+  return(Mes)
 }
 
