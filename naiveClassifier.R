@@ -13,25 +13,24 @@ Voc = function(x){
 
 
 score <- function(mail,cate){
+  alpha = 2
   mail <- unlist(RMeCabC(mail))
   mail <- subset(mail,mail != "")
-  score = prior[cate]
+  
   if(cate == 1){voc = spam.words}
   if(cate == 2){voc = nonspam.words}
+  n = nrow(spam.words) + nrow(nonspam.words)
   
   for (w in 1:length(mail)){
-    zero = TRUE
+    temp = 0
     for(i in 1:nrow(voc)){
       if(as.character(voc[i,1]) == mail[w]){
-        score = score * voc[i,3]
-        zero = FALSE
-        break
+        temp = voc[i,3]
+        break}
       }
+      score = prior[cate] * (temp + alpha - 1 )/(sum(voc[,3]) + alpha*n)
     }
-    if(zero == TRUE){
-      score = score *(1/(sum(voc[,2])*10))
-    }
-  }
+    
   return(score)
 }
 
