@@ -13,7 +13,7 @@ Voc = function(x){
 
 
 score <- function(mail,cate){
-  alpha = 10		### Prior
+  alpha = 50		### Prior
   score = prior[cate]	### Default Score
   
   mail <- unlist(RMeCabC(mail))				
