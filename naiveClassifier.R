@@ -16,8 +16,8 @@ score <- function(mail,cate){
   alpha = 2		### Prior
   score = prior[cate]	### Default Score
   
-  mail <- unlist(RMeCabC(mail))				### 文章を切ってベクトル化する
-  mail <- subset(mail,mail != "") 			### スペースを除く
+  mail <- unlist(RMeCabC(mail))				
+  mail <- subset(mail,mail != "") 			
   
   if(cate == 1){voc = spam.words}
   if(cate == 2){voc = nonspam.words}
