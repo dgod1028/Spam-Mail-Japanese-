@@ -13,9 +13,11 @@ Voc = function(x){
 
 
 score <- function(mail,cate){
-  alpha = 2
-  mail <- unlist(RMeCabC(mail))
-  mail <- subset(mail,mail != "")
+  alpha = 2		### Prior
+  score = prior[cate]	### Default Score
+  
+  mail <- unlist(RMeCabC(mail))				### 文章を切ってベクトル化する
+  mail <- subset(mail,mail != "") 			### スペースを除く
   
   if(cate == 1){voc = spam.words}
   if(cate == 2){voc = nonspam.words}
@@ -28,7 +30,7 @@ score <- function(mail,cate){
         temp = voc[i,3]
         break}
       }
-      score = prior[cate] * (temp + alpha - 1 )/(sum(voc[,3]) + alpha*n)
+      score = score * (temp + alpha - 1 )/(sum(voc[,3]) + alpha*n)
     }
     
   return(score)
