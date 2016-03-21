@@ -1,4 +1,3 @@
-
 Voc = function(x){
 	word = list()
 	for(i in 1:length(x)){
