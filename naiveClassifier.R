@@ -11,6 +11,9 @@ Voc = function(x){
 	return(voc)
 }
 
+spam.words    <- Voc(spam.d)  ## 辞典を作る（単語、頻度、出現確率）
+nonspam.words <- Voc(nonspam.d)
+
 
 score <- function(mail,cate){
   alpha = 2		### Prior
