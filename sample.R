@@ -92,6 +92,11 @@ nonspam.d[[2]] = "お疲れ様です。
 誠に申し訳ございませんでした。
 "
 spam.list<- getURL("https://raw.githubusercontent.com/dgod1028/Spam-Mail-Japanese-/master/sample.R")
-spam.d <- gsub("\n","",spam.d)
-nonspam.d <- gsub("\n","",nonspam.d)
+#spam.d <- gsub("\n","",spam.d)
+#nonspam.d <- gsub("\n","",nonspam.d)
+
+prior=c()
+total = length(spam.d) + length(nonspam.d)
+prior[1]=length(spam.d)/ total  ## スパムの事前確率
+prior[2]=length(nonspam.d)/ total ##　普通メールの事前確率
 
