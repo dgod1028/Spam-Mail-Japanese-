@@ -13,7 +13,7 @@ Voc = function(x){
 
 
 score <- function(mail,cate){
-  alpha = 50		### Prior
+  alpha = 2		### Prior
   score = prior[cate]	### Default Score
   
   mail <- unlist(RMeCabC(mail))				
@@ -27,10 +27,10 @@ score <- function(mail,cate){
     temp = 0
     for(i in 1:nrow(voc)){
       if(as.character(voc[i,1]) == mail[w]){
-        temp = voc[i,3]
+        temp = voc[i,2]
         break}
       }
-      score = score * (temp + alpha - 1 )/(sum(voc[,3]) + alpha*n)
+      score = score * (temp + alpha - 1 )/(sum(voc[,2]) + alpha*n)
     }
     
   return(score)
