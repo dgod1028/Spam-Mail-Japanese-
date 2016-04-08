@@ -1,8 +1,5 @@
-### Read Me
-### https://raw.githubusercontent.com/dgod1028/Spam-Mail-Japanese-/master/README.txt
-
 ### http://taku910.github.io/mecab/
-## 上のサイトから mecab_0.996.exe をダウンロードしてインストールします．
+## 最初に上のサイトから mecab_0.996.exe をダウンロードしてインストールします．
 
 ##　必要なパッケージ
 ##  install.packages ("RMeCab", repos = "http://rmecab.jp/R")
@@ -15,7 +12,6 @@ library(RMeCab)
 
 source("d:/Spam_Function.R",encoding = "UTF-8")  ##　フォルダは自分で修正が必要です。
 
-##　分類実例
 
 ##　③新着メールの分類
 
