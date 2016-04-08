@@ -90,7 +90,7 @@ nonspam.d[[2]] = "お疲れ様です。
 部長には、もしかして先方様からなんらかのご注意があるなどで
 ご迷惑をおかけするかもしれませんので、取り急ぎ、ご報告申し上げます。
 
-誠に申し訳ございませんでした。
+誠に申し訳ございませんでした。 
 "
 spam.list<- getURL("https://raw.githubusercontent.com/dgod1028/Spam-Mail-Japanese-/master/sample.R")
 spam.d <- gsub("\n","",spam.d)
